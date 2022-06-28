@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 # Extra credit exercise: modify the program from the previous exercise
 # so that immediately following the word ending in a it will also

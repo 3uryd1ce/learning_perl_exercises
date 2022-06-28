@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 # Modify the program from the previous exercise to use named captures
 # instead of relying on $1. Update the code to display that label name,

@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 # Modify the program from the previous exercise so that the word ending
 # with the letter a is captured into $1. Update the code to display that

@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 # Using the pattern test program, make a pattern to match the string
 # match. Try the program with the input string beforematchafter. Does

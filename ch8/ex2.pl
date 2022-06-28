@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 # Using the pattern test program, make a pattern that matches if any
 # word (in the \w sense of word) ends with the letter a. Does it match
