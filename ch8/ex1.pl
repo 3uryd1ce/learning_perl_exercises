@@ -6,13 +6,12 @@
 
 use strict;
 use warnings;
-use v5.10;
 
 while (<>) {
 	chomp;
-	if (/match/pa) {
-		print "Matched: |${^PREMATCH}<${^MATCH}>${^POSTMATCH}|\n";
+	if (/match/p) {
+		print "Matched: |${^PREMATCH}<${^MATCH}>${^POSTMATCH}|", "\n";
 	} else {
-		print "No match: |$_|\n";
+		print "No match: |$_|", "\n";
 	}
 }

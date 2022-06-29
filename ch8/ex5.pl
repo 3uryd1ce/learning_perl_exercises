@@ -11,7 +11,7 @@
 
 use strict;
 use warnings;
-use v5.10;
+use v5.14;
 
 while (<>) {
 	chomp;
@@ -24,10 +24,10 @@ while (<>) {
 	(.{0,5}) # up to five non whitespace characters
 
 	/xpa) {  # end pattern
-		print "Matched: |${^PREMATCH}<${^MATCH}>${^POSTMATCH}|\n";
-		print "\$1 contains '$1'\n";
-		print "\$2 contains '$2'\n";
+		print "Matched: |${^PREMATCH}<${^MATCH}>${^POSTMATCH}|", "\n";
+		print "\$1 contains '$1'", "\n";
+		print "\$2 contains '$2'", "\n";
 	} else {
-		print "No match: |$_|\n";
+		print "No match: |$_|", "\n";
 	}
 }

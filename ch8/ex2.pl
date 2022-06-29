@@ -9,7 +9,7 @@
 
 use strict;
 use warnings;
-use v5.10;
+use v5.14;
 
 while (<>) {
 	chomp;
@@ -20,8 +20,8 @@ while (<>) {
 	\b      # word boundary
 
 	/xpa) { # end pattern
-		print "Matched: |${^PREMATCH}<${^MATCH}>${^POSTMATCH}|\n";
+		print "Matched: |${^PREMATCH}<${^MATCH}>${^POSTMATCH}|", "\n";
 	} else {
-		print "No match: |$_|\n";
+		print "No match: |$_|", "\n";
 	}
 }

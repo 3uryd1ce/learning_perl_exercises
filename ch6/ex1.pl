@@ -24,5 +24,5 @@ chomp(my $first_name = <STDIN>);
 if (exists($last_names{$first_name})) {
 	print "I see you're a fan of $first_name $last_names{$first_name}.", "\n";
 } else {
-	die "A last name for \"$first_name\" could not be found.\n";
+	die "A last name for \"$first_name\" could not be found.", "\n";
 }

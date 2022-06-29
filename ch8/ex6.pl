@@ -7,11 +7,12 @@
 
 use strict;
 use warnings;
+use v5.14;
 
 while (<>) {
 	chomp;
 
-	if (/\s\z/) {
+	if (/\s\z/a) {
 		print "This line ends in whitespace: {$_}", "\n";
 	}
 }
