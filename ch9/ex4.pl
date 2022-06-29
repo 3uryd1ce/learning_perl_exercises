@@ -16,13 +16,8 @@ my $copyright_string = '## Copyright (C) 2022 by Yours Truly';
 while (<>) {
 	s{
 		(\A                 # beginning of string
-		[#]!/usr/bin/       # #!/usr/bin/
-		(?:env[ ]perl|perl) # either 'env perl' or 'perl'
-		\Z)                 # end of string including newline
-		                    #
-		                    # the pattern should match either of these:
-		                    # #!/usr/bin/perl
-		                    # #!/usr/bin/env perl
+		[#]!                # #!
+		.*\Z)               # anything up to the end of the line, including newline
 	}
 	{$1\n$copyright_string}x; # interpolate match, add a newline,
 	                          # and then the copyright.
