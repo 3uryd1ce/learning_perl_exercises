@@ -28,6 +28,7 @@ for (@ARGV) {
 }
 
 # book had a creative solution: using a placeholder string.
+# it is probably less expensive than the regular expression I wrote.
 #
 # while (<$in_fh>) {
 # 	chomp;
