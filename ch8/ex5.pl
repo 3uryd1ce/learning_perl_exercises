@@ -11,7 +11,7 @@
 
 use strict;
 use warnings;
-use v5.14;
+use v5.14; # character set modifiers
 
 while (<>) {
 	chomp;
