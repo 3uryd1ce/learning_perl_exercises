@@ -12,31 +12,25 @@ use warnings;
 
 $^I = '.bak';
 my $copyright_string = "## Copyright (C) 2022 by Yours Truly";
-my $count = 0;
 
 while (<>) {
-	# only try the substitution on the first line.
-	if ($count =~ /\A0\z/) {
-		s{
-			(\A                 # beginning of string
-			[#]!/usr/bin/       # #!/usr/bin/
-			(?:env[ ]perl|perl) # either 'env perl' or 'perl'
-			\Z)                 # end of string including newline
-			                    #
-			                    # the pattern should match either of these:
-			                    # #!/usr/bin/perl
-			                    # #!/usr/bin/env perl
-		}
-		{$1\n$copyright_string}x; # interpolate match, add a newline,
-		                          # and then the copyright.
-		                          #
-		                          # note that this cannot be spaced the
-		                          # same as the pattern, because the
-		                          # spaces and newlines will show up in
-		                          # the replacement despite `/x`.
-
-		$count++;
+	s{
+		(\A                 # beginning of string
+		[#]!/usr/bin/       # #!/usr/bin/
+		(?:env[ ]perl|perl) # either 'env perl' or 'perl'
+		\Z)                 # end of string including newline
+							#
+							# the pattern should match either of these:
+							# #!/usr/bin/perl
+							# #!/usr/bin/env perl
 	}
+	{$1\n$copyright_string}x; # interpolate match, add a newline,
+							  # and then the copyright.
+							  #
+							  # note that this cannot be spaced the
+							  # same as the pattern, because the
+							  # spaces and newlines will show up in
+							  # the replacement despite `/x`.
 
 	print;
 }

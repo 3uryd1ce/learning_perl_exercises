@@ -20,14 +20,9 @@ for (@ARGV) {
 @ARGV = keys %files_to_edit;
 
 while (<>) {
-	# only try the substitution on the first line.
-	if ($count =~ /\A0\z/) {
-		if (/\A#!/) {
-			$_ .= "$copyright_string\n";
-			delete $files_to_edit{$ARGV};
-		}
-
-		$count++;
+	if (/\A#!/) {
+		$_ .= "$copyright_string\n";
+		delete $files_to_edit{$ARGV};
 	}
 
 	print;
