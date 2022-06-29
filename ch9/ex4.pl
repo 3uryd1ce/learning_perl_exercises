@@ -19,18 +19,18 @@ while (<>) {
 		[#]!/usr/bin/       # #!/usr/bin/
 		(?:env[ ]perl|perl) # either 'env perl' or 'perl'
 		\Z)                 # end of string including newline
-							#
-							# the pattern should match either of these:
-							# #!/usr/bin/perl
-							# #!/usr/bin/env perl
+		                    #
+		                    # the pattern should match either of these:
+		                    # #!/usr/bin/perl
+		                    # #!/usr/bin/env perl
 	}
 	{$1\n$copyright_string}x; # interpolate match, add a newline,
-							  # and then the copyright.
-							  #
-							  # note that this cannot be spaced the
-							  # same as the pattern, because the
-							  # spaces and newlines will show up in
-							  # the replacement despite `/x`.
+	                          # and then the copyright.
+	                          #
+	                          # note that this cannot be spaced the
+	                          # same as the pattern, because the
+	                          # spaces and newlines will show up in
+	                          # the replacement despite `/x`.
 
 	print;
 }
