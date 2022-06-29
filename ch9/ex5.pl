@@ -9,7 +9,7 @@ use strict;
 use warnings;
 
 $^I = '.bak';
-my $copyright_string = "## Copyright (C) 2022 by Yours Truly";
+my $copyright_string = '## Copyright (C) 2022 by Yours Truly';
 my $count = 0;
 
 my %files_to_edit;
