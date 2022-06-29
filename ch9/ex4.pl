@@ -17,7 +17,7 @@ while (<>) {
 	s{
 		(\A   # beginning of string
 		[#]!  # #!
-		.*\Z) # anything up to the end of the line, including newline
+		.*\Z) # everything up to the end of the line, including newline
 	}
 	{$1\n$copyright_string}x; # interpolate match, add a newline,
 	                          # and then the copyright.
