@@ -18,10 +18,10 @@ my $given_year = $ARGV[0];
 $given_year =~ /\A\d{4}\z/a or die "The first argument must be a year with four digits.\n";
 
 my $given_month = $ARGV[1];
-$given_month =~ /\A\d+\z/a or die "The second argument must be the month as an integer.\n";
+$given_month =~ /\A\d+\z/a or die "The second argument must be a month as an integer.\n";
 
 my $given_day = $ARGV[2];
-$given_day =~ /\A\d+\z/a or die "The third argument must be the day as an integer.\n";
+$given_day =~ /\A\d+\z/a or die "The third argument must be a day as an integer.\n";
 
 
 my $datetime_now = DateTime->today();
