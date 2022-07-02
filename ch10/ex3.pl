@@ -10,7 +10,6 @@
 use strict;
 use warnings;
 
-my %env_var;
 $ENV{BOGUS} = undef;
 $ENV{BOGUS2} = 0;
 my $width = 0;
