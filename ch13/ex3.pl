@@ -12,7 +12,6 @@ use v5.14; # character set modifiers
 print "Enter a directory name to list its contents (blank means home)", "\n";
 chomp(my $provided_directory = <STDIN>);
 
-
 if ($provided_directory =~ /\A\s*\z/a) {
 	chdir or die "Could not change to the home directory: $!\n";
 } else {

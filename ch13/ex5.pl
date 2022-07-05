@@ -11,9 +11,11 @@ use warnings;
 use File::Basename;
 use File::Spec;
 
+
 my ($file_to_move, $destination) = @ARGV;
 $file_to_move or die "File name to move must be provided.\n";
 $destination or die "Destination must be provided.\n";
+
 
 if (-d $destination) {
 	my $basename = basename $file_to_move;

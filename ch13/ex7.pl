@@ -12,12 +12,14 @@ use File::Basename;
 use File::Spec;
 use Getopt::Std;
 
+
 our $opt_s;
 getopts('s');
 
 my ($source, $target) = @ARGV;
 $source or die "Link source must be provided.\n";
 $target or die "Link target must be provided.\n";
+
 
 if (-d $target) {
 	my $basename = basename $source;
