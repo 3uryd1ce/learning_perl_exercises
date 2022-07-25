@@ -10,7 +10,7 @@ use v5.14; # character set modifiers
 
 my $secret_number = int(1 + rand 100);
 
-print 'Choose a number between 1 and 100.', "\n";
+say 'Choose a number between 1 and 100.';
 
 while (1) {
 	chomp(my $guess = <STDIN> // '');
