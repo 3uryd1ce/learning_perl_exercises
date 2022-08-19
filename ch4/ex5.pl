@@ -25,7 +25,8 @@ sub greet {
 
 	if (@previous_names) {
 		print "Hi $name! I've seen: @previous_names", "\n";
-	} else {
+	}
+	else {
 		print "Hi $name! You are the first one here!", "\n";
 	}
 

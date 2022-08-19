@@ -15,7 +15,7 @@
 
 use strict;
 use warnings;
-use v5.10; # say
+use v5.10;  # say
 
 my %last_name = (
 	fred => 'flintstone',
@@ -28,10 +28,9 @@ my %last_name = (
 
 sub by_name {
 	"\L$last_name{$a}" cmp "\L$last_name{$b}"
-		or
-	"\L$a" cmp "\L$b";
+		or "\L$a" cmp "\L$b";
 }
 
-for (sort by_name keys %last_name) {
+for ( sort by_name keys %last_name ) {
 	say "$_ $last_name{$_}";
 }

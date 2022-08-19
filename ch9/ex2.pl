@@ -10,7 +10,7 @@
 use strict;
 use warnings;
 
-if (!@ARGV) {
+if ( !defined @ARGV ) {
 	die "$0 [input_file] [...]\n";
 }
 

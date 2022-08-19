@@ -8,7 +8,7 @@
 
 use strict;
 use warnings;
-use v5.14; # character set modifier
+use v5.14;  # character set modifier
 
 my @numbers;
 my $greatest_length = 0;
@@ -20,7 +20,7 @@ while (<>) {
 		next;
 	}
 
-	$greatest_length = length if ($greatest_length < length);
+	$greatest_length = length if ( $greatest_length < length );
 
 	push @numbers, $_;
 }

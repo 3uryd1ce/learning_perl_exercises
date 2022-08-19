@@ -19,7 +19,7 @@ print "Please enter some strings and then exit (CTRL-D):", "\n";
 
 # chomp is needed because a newline is a character, and that will throw
 # off the alignment.
-chomp(my @strings = <STDIN>);
+chomp( my @strings = <STDIN> );
 
 print "1234567890" x 2, "\n";
 printf "%20s\n" x @strings, @strings;

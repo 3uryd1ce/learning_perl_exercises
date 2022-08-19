@@ -22,16 +22,21 @@ use feature 'say';
 my $sample_text = './sample_text.txt';
 
 open my $sample_fh, '<', $sample_text;
-chomp(my @lines = <$sample_fh>);
+chomp( my @lines = <$sample_fh> );
 close $sample_fh;
 
 while (1) {
 	say 'Please enter a regular expression (or a blank line to quit):';
-	chomp(my $regexp = <STDIN> // exit);
+	chomp( my $regexp = <STDIN> // exit );
 	exit if $regexp =~ /\A \s* \z/ax;
 
 	my @matching_lines;
-	unless (eval { @matching_lines = grep { /$regexp/ } @lines; }) {
+	unless (
+		eval {
+			@matching_lines = grep { /$regexp/ } @lines;
+		}
+		)
+	{
 		print STDERR "Failed to scan file: $@" if $@;
 		next;
 	}

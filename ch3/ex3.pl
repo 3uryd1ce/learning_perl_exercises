@@ -12,7 +12,6 @@ use warnings;
 
 print "Enter some strings and then exit (CTRL-D):", "\n";
 
-my @strings = <STDIN>;
-#chomp(my @strings = <STDIN>);
+my @strings = <STDIN>;  #chomp(my @strings = <STDIN>);
 
 print sort @strings;

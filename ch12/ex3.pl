@@ -10,8 +10,7 @@ use warnings;
 @ARGV or die "File names must be provided as arguments.\n";
 
 for (@ARGV) {
-	if (-r -w -o $_) {
-		print "$_ is readable, writable, and owned by "
-			. getpwuid($<) . "\n";
+	if ( -r -w -o $_ ) {
+		print "$_ is readable, writable, and owned by " . getpwuid($<) . "\n";
 	}
 }

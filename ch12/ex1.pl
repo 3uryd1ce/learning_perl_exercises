@@ -14,7 +14,6 @@
 use strict;
 use warnings;
 
-
 sub test_file {
 	my $file = shift;
 	return 'does not exist' unless -e $file;
@@ -29,7 +28,6 @@ sub test_file {
 		? return 'is ' . join ', ', @perms
 		: return 'exists';
 }
-
 
 @ARGV or die "No file names were provided.\n";
 

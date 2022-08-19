@@ -20,7 +20,8 @@ sub greet {
 
 	if ($previous_name) {
 		print "Hi $name! $previous_name is also here!", "\n";
-	} else {
+	}
+	else {
 		print "Hi $name! You are the first one here!", "\n";
 	}
 

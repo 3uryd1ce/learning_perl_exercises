@@ -10,7 +10,7 @@ use warnings;
 opendir my $current_directory_fh, '.'
 	or die "Could not open the current directory for reading: $!\n";
 
-while (readdir $current_directory_fh) {
+while ( readdir $current_directory_fh ) {
 	my $link_target = readlink $_;
 	next unless $link_target;
 	print "$_ -> $link_target", "\n";

@@ -19,13 +19,12 @@ while (<>) {
 		[#]!  # #!
 		.*\Z) # everything up to the end of the line, including newline
 	}
-	{$1\n$copyright_string}x; # interpolate match, add a newline,
-	                          # and then the copyright.
-	                          #
-	                          # note that this cannot be spaced the
-	                          # same as the pattern, because the
-	                          # spaces and newlines will show up in
-	                          # the replacement despite `/x`.
+	{$1\n$copyright_string}x;
+
+	# the above interpolates a match, adds a newline, and then the copyright.
+	#
+	# note that this cannot be spaced the same as the pattern, because the
+	# spaces and newlines will show up in the replacement despite `/x`.
 
 	print;
 }

@@ -19,10 +19,11 @@ my %last_names = (
 );
 
 print 'fred, barney, or wilma?', "\n";
-chomp(my $first_name = <STDIN>);
+chomp( my $first_name = <STDIN> );
 
-if (exists($last_names{$first_name})) {
+if ( exists( $last_names{$first_name} ) ) {
 	print "I see you're a fan of $first_name $last_names{$first_name}.", "\n";
-} else {
+}
+else {
 	die "A last name for \"$first_name\" could not be found.", "\n";
 }

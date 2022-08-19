@@ -14,12 +14,12 @@ $ENV{BOGUS} = undef;
 $ENV{BOGUS2} = 0;
 my $width = 0;
 
-for (keys %ENV) {
-	if (length > $width) {
+for ( keys %ENV ) {
+	if ( length > $width ) {
 		$width = length;
 	}
 }
 
-for (sort keys %ENV) {
+for ( sort keys %ENV ) {
 	printf "%-${width}s %s\n", $_, $ENV{$_} // '(undefined value)';
 }

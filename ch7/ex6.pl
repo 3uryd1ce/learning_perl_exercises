@@ -7,8 +7,8 @@ use strict;
 use warnings;
 
 while (<>) {
-	if (/(wilma.*fred|fred.*wilma)/) {
 	#if (/wilma/ && /fred/) { # also possible, but not introduced yet
+	if (/(wilma.*fred|fred.*wilma)/) {
 		print;
 	}
 }

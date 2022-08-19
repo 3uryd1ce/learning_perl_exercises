@@ -13,8 +13,8 @@ use autodie;
 use strict;
 use warnings;
 
-for (glob '*') {
-	my ($atime, $mtime) = (stat)[8, 9];
+for ( glob '*' ) {
+	my ( $atime, $mtime ) = (stat)[ 8, 9 ];
 	next unless -f _;
 
 	printf "%-20s %10d %10d\n", $_, $atime, $mtime;

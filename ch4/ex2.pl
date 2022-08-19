@@ -15,4 +15,4 @@ sub total {
 	return $sum;
 }
 
-print &total(1..1000), "\n";
+print &total( 1 .. 1000 ), "\n";

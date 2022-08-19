@@ -11,15 +11,13 @@ use warnings;
 use File::Basename;
 use File::Spec;
 
-
-my ($file_to_move, $destination) = @ARGV;
+my ( $file_to_move, $destination ) = @ARGV;
 $file_to_move or die "File name to move must be provided.\n";
 $destination or die "Destination must be provided.\n";
 
-
-if (-d $destination) {
+if ( -d $destination ) {
 	my $basename = basename $file_to_move;
-	$destination = File::Spec->catfile($destination, $basename);
+	$destination = File::Spec->catfile( $destination, $basename );
 }
 
 rename $file_to_move, $destination

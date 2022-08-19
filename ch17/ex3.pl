@@ -14,15 +14,16 @@ use autodie;
 use strict;
 use warnings;
 
-for my $file (glob '*') {
-	my ($atime, $mtime) = (stat $file)[8, 9];
+for my $file ( glob '*' ) {
+	my ( $atime, $mtime ) = ( stat $file )[ 8, 9 ];
 	next unless -f _;
 
-	my ($formatted_atime, $formatted_mtime) = map {
-		my ($year, $month, $day) = (localtime $_)[5, 4, 3];
-		$month++; $year += 1900;
+	my ( $formatted_atime, $formatted_mtime ) = map {
+		my ( $year, $month, $day ) = ( localtime $_ )[ 5, 4, 3 ];
+		$month++;
+		$year += 1900;
 		sprintf '%4d-%02d-%02d', $year, $month, $day;
-	} ($atime, $mtime);
+	} ( $atime, $mtime );
 
 	printf "%-20s %10s %10s\n", $file, $formatted_atime, $formatted_mtime;
 }

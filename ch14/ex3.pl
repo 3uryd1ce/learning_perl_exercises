@@ -9,17 +9,18 @@
 
 use strict;
 use warnings;
-use v5.10; # say
+use v5.10;  # say
 
 say "Please enter a string to search:";
-chomp(my $given_string = <STDIN>);
+chomp( my $given_string = <STDIN> );
 
 say "Please enter a substring to find:";
-chomp(my $given_substring = <STDIN>);
+chomp( my $given_substring = <STDIN> );
 
 my $position = 0;
 
-while (($position = index $given_string, $given_substring, $position) != -1) {
+while ( ( $position = index $given_string, $given_substring, $position ) != -1 )
+{
 	say "'$given_substring' was found at $position in '$given_string'";
 	$position++;
 }

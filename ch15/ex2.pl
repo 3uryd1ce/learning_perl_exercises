@@ -9,14 +9,14 @@
 
 use strict;
 use warnings;
-use v5.10.1; # given-when
+use v5.10.1;  # given-when
 
-for (1..105) {
+for ( 1 .. 105 ) {
 	my $string = '';
 	given ($_) {
-		when ($_ % 3 == 0) { $string .= ' Fizz'; continue; }
-		when ($_ % 5 == 0) { $string .= ' Bin'; continue; }
-		when ($_ % 7 == 0) { $string .= ' Sausage'; }
+		when ( $_ % 3 == 0 ) { $string .= ' Fizz'; continue; }
+		when ( $_ % 5 == 0 ) { $string .= ' Bin'; continue; }
+		when ( $_ % 7 == 0 ) { $string .= ' Sausage'; }
 	}
 	say $_ . $string;
 }

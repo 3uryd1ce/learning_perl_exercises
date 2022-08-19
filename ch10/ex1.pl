@@ -11,34 +11,40 @@
 
 use strict;
 use warnings;
-use v5.14; # character set modifiers
+use v5.14;  # character set modifiers
 
-my $secret_number = int(1 + rand 100);
+my $secret_number = int( 1 + rand 100 );
 
 print 'Choose a number between 1 and 100.', "\n";
 
 # naked block to practice it. I would probably use a while loop here
 # otherwise.
 {
-	chomp(my $guess = <STDIN> // '');
+	chomp( my $guess = <STDIN> // '' );
 
-	if ($guess =~ /\A(?:quit|exit|\s*)\z/ai) {
+	if ( $guess =~ /\A(?:quit|exit|\s*)\z/ai ) {
 		print 'Exiting.', "\n";
 		last;
-	} elsif ($guess =~ /\D/a || $guess > 100 || $guess < 1) {
+	}
+	elsif ( $guess =~ /\D/a || $guess > 100 || $guess < 1 ) {
 		print "$guess is not a number between 1 and 100, try again.", "\n";
 		redo;
-	} elsif ($guess == $secret_number) {
+	}
+	elsif ( $guess == $secret_number ) {
 		print 'You got it!', "\n";
 		last;
-	} elsif ($guess < $secret_number) {
+	}
+	elsif ( $guess < $secret_number ) {
 		print 'Too low.', "\n";
 		redo;
-	} elsif ($guess > $secret_number) {
+	}
+	elsif ( $guess > $secret_number ) {
 		print 'Too high.', "\n";
 		redo;
-	} else {
-		print 'This should never happen. Does this also count as winning?', "\n";
+	}
+	else {
+		print 'This should never happen. Does this also count as winning?',
+			"\n";
 		last;
 	}
 }

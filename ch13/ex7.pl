@@ -12,22 +12,21 @@ use File::Basename;
 use File::Spec;
 use Getopt::Std;
 
-
 our $opt_s;
 getopts('s');
 
-my ($source, $target) = @ARGV;
+my ( $source, $target ) = @ARGV;
 $source or die "Link source must be provided.\n";
 $target or die "Link target must be provided.\n";
 
-
-if (-d $target) {
+if ( -d $target ) {
 	my $basename = basename $source;
-	my $target = File::Spec->catfile($target, $basename);
+	my $target = File::Spec->catfile( $target, $basename );
 }
 
 if ($opt_s) {
 	symlink $source, $target or die "Link of $source to $target failed: $!\n";
-} else {
+}
+else {
 	link $source, $target or die "Link of $source to $target failed: $!\n";
 }

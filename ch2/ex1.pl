@@ -9,6 +9,6 @@ use strict;
 use warnings;
 
 my $radius = 12.5;
-my $approx_pi= 3.141592654;
+my $approx_pi = 3.141592654;
 
 print 2 * $radius * $approx_pi, "\n";

@@ -16,10 +16,11 @@ sub generate_ruler {
 	my @ruler;
 	my $count = 0;
 
-	while (@ruler < $ruler_width) {
-		if ($count == 9) {
+	while ( @ruler < $ruler_width ) {
+		if ( $count == 9 ) {
 			$count = 0;
-		} else {
+		}
+		else {
 			$count += 1;
 		}
 
@@ -30,10 +31,10 @@ sub generate_ruler {
 }
 
 print "Please enter the column width on line one:", "\n";
-chomp(my $column_width = <STDIN>);
+chomp( my $column_width = <STDIN> );
 
 print "Please enter some strings and then exit (CTRL-D):", "\n";
-chomp(my @strings = <STDIN>);
+chomp( my @strings = <STDIN> );
 
 print &generate_ruler($column_width), "\n";
 printf "%${column_width}s\n" x @strings, @strings;

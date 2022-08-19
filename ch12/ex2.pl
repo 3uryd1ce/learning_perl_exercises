@@ -16,9 +16,10 @@ my $largest_age = -M $oldest_file;
 # then realized the hash was an unnecessary step in the process.
 for (@ARGV) {
 	my $current_age = -M;
-	if ($current_age > $largest_age) {
-		($oldest_file, $largest_age) = ($_, $current_age);
+	if ( $current_age > $largest_age ) {
+		( $oldest_file, $largest_age ) = ( $_, $current_age );
 	}
 }
 
-printf "%s is the oldest file and it is %.2f days old\n", $oldest_file, $largest_age;
+printf "%s is the oldest file and it is %.2f days old\n", $oldest_file,
+	$largest_age;

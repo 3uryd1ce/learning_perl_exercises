@@ -12,12 +12,12 @@ use warnings;
 
 my $width = 0;
 
-for (keys %ENV) {
-	if (length > $width) {
+for ( keys %ENV ) {
+	if ( length > $width ) {
 		$width = length;
 	}
 }
 
-for (sort keys %ENV) {
+for ( sort keys %ENV ) {
 	printf "%-${width}s %s\n", $_, $ENV{$_};
 }

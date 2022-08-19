@@ -10,18 +10,18 @@
 
 use strict;
 use warnings;
-use v5.14; # character set modifiers
-
+use v5.14;  # character set modifiers
 
 print "Enter a directory name to list its contents (blank means home)", "\n";
-chomp(my $provided_directory = <STDIN>);
+chomp( my $provided_directory = <STDIN> );
 
-if ($provided_directory =~ /\A\s*\z/a) {
+if ( $provided_directory =~ /\A\s*\z/a ) {
 	chdir or die "Could not change to the home directory: $!\n";
-} else {
-	chdir $provided_directory or die "Could not change directory to $provided_directory: $!\n";
+}
+else {
+	chdir $provided_directory
+		or die "Could not change directory to $provided_directory: $!\n";
 }
 
-
 my @all_files = glob '*';
-print(join("\n", @all_files), "\n");
+print( join( "\n", @all_files ), "\n" );

@@ -11,23 +11,25 @@
 
 use strict;
 use warnings;
-use v5.14; # character set modifiers
+use v5.14;  # character set modifiers
 
 while (<>) {
 	chomp;
-	if (/    # begin pattern
+	if (/  # begin pattern
 
-	\b       # begin word boundary
-	(\w*a)   # any number of word characters followed by 'a'
-	\b       # end word boundary
+	\b  # begin word boundary
+	(\w*a)  # any number of word characters followed by 'a'
+	\b  # end word boundary
 
-	(.{0,5}) # up to five non whitespace characters
+	(.{0,5})  # up to five non whitespace characters
 
-	/xpa) {  # end pattern
+	/xpa)
+	{  # end pattern
 		print "Matched: |${^PREMATCH}<${^MATCH}>${^POSTMATCH}|", "\n";
 		print "\$1 contains '$1'", "\n";
 		print "\$2 contains '$2'", "\n";
-	} else {
+	}
+	else {
 		print "No match: |$_|", "\n";
 	}
 }

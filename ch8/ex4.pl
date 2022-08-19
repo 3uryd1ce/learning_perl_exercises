@@ -6,21 +6,23 @@
 
 use strict;
 use warnings;
-use v5.14; # character set modifiers
+use v5.14;  # character set modifiers
 
 while (<>) {
 	chomp;
-	if (/    # begin pattern
+	if (/  # begin pattern
 
-	\b       # word boundary
-	(?<word> # capture group goes to a label named word
-	\w*a)    # any number of word characters followed by a
-	\b       # word boundary
+	\b  # word boundary
+	(?<word>  # capture group goes to a label named word
+	\w*a)  # any number of word characters followed by a
+	\b  # word boundary
 
-	/xpa) {  # end pattern
+	/xpa)
+	{  # end pattern
 		print "Matched: |${^PREMATCH}<${^MATCH}>${^POSTMATCH}|", "\n";
 		print "'word' contains '$+{word}'", "\n";
-	} else {
+	}
+	else {
 		print "No match: |$_|", "\n";
 	}
 }

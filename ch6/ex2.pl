@@ -18,13 +18,14 @@ my %number_seen;
 while (<STDIN>) {
 	chomp;
 
-	if (exists($number_seen{$_})) {
+	if ( exists( $number_seen{$_} ) ) {
 		$number_seen{$_} += 1;
-	} else {
+	}
+	else {
 		$number_seen{$_} = 1;
 	}
 }
 
-for (sort keys %number_seen) {
+for ( sort keys %number_seen ) {
 	print "$_ was seen $number_seen{$_} time(s).", "\n";
 }

@@ -7,20 +7,22 @@
 
 use strict;
 use warnings;
-use v5.14; # character set modifiers
+use v5.14;  # character set modifiers
 
 while (<>) {
 	chomp;
-	if (/   # begin pattern
+	if (/  # begin pattern
 
-	\b      # word boundary
+	\b  # word boundary
 	(\w*a)  # any number of word characters followed by 'a'
-	\b      # word boundary
+	\b  # word boundary
 
-	/xpa) { # end of pattern
+	/xpa)
+	{  # end of pattern
 		print "Matched: |${^PREMATCH}<${^MATCH}>${^POSTMATCH}|", "\n";
 		print "\$1 contains '$1'", "\n";
-	} else {
+	}
+	else {
 		print "No match: |$_|", "\n";
 	}
 }

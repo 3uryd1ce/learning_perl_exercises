@@ -13,12 +13,13 @@
 
 use strict;
 use warnings;
-use v5.10; # say
+use v5.10;  # say
 
 my ($day) = split " ", `date`;
 
-if ($day ne 'Sat' && $day ne 'Sun') {
+if ( $day ne 'Sat' && $day ne 'Sun' ) {
 	say "Get to work!";
-} else {
+}
+else {
 	say "Go play.";
 }

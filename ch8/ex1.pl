@@ -11,7 +11,8 @@ while (<>) {
 	chomp;
 	if (/match/p) {
 		print "Matched: |${^PREMATCH}<${^MATCH}>${^POSTMATCH}|", "\n";
-	} else {
+	}
+	else {
 		print "No match: |$_|", "\n";
 	}
 }

@@ -26,7 +26,8 @@ sub total {
 }
 
 sub average {
-	@_ == 0 and die "The 'average' subroutine cannot be passed zero arguments\n";
+	@_ == 0
+		and die "The 'average' subroutine cannot be passed zero arguments\n";
 	my $number_of_elements = @_;
 	my $sum = &total(@_);
 
@@ -38,7 +39,7 @@ sub above_average {
 	my @above_average_numbers;
 
 	for (@_) {
-		if ($_ > $mean) {
+		if ( $_ > $mean ) {
 			push @above_average_numbers, $_;
 		}
 	}
@@ -46,9 +47,9 @@ sub above_average {
 	return @above_average_numbers;
 }
 
-my @fred = above_average(1..10);
+my @fred = above_average( 1 .. 10 );
 print "\@fred is @fred\n";
 print "(Should be 6 7 8 9 10)\n";
-my @barney = above_average(100, 1..10);
+my @barney = above_average( 100, 1 .. 10 );
 print "\@barney is @barney\n";
 print "(Should be just 100)\n";

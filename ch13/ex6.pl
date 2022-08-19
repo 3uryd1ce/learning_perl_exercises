@@ -13,15 +13,13 @@ use warnings;
 use File::Basename;
 use File::Spec;
 
-
-my ($source, $target) = @ARGV;
+my ( $source, $target ) = @ARGV;
 $source or die "Hard link source must be provided.\n";
 $target or die "Hard link target must be provided.\n";
 
-
-if (-d $target) {
+if ( -d $target ) {
 	my $basename = basename $source;
-	my $target = File::Spec->catfile($target, $basename);
+	my $target = File::Spec->catfile( $target, $basename );
 }
 
 link $source, $target
