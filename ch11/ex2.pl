@@ -47,7 +47,8 @@ my $given_datetime = DateTime->new(
 	day => $given_day,
 );
 
-my $duration = $datetime_now > $given_datetime
+my $duration =
+	$datetime_now > $given_datetime
 	? $datetime_now->subtract_datetime($given_datetime)
 	: $given_datetime->subtract_datetime($datetime_now);
 

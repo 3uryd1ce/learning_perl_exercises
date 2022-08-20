@@ -31,11 +31,9 @@ while (1) {
 	exit if $regexp =~ /\A \s* \z/ax;
 
 	my @matching_lines;
-	unless (
-		eval {
-			@matching_lines = grep { /$regexp/ } @lines;
-		}
-		)
+	unless ( eval {
+		@matching_lines = grep { /$regexp/ } @lines;
+	} )
 	{
 		print STDERR "Failed to scan file: $@" if $@;
 		next;
